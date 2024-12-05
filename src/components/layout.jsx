@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
           </a>
         </div>
         <div className="space-x-4">
-          <a href="https://github.com/C0WAL/GW2Calc">
+          <a href="https://github.com/C0WAL/GW2Calc" target="_blank" rel="noopener noreferrer">
             <StaticImage
               alt="Github invertocat logo"
               src="../images/github-mark-white.png"
