@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
           <a href="/" className="flex items-center space-x-4">
             <StaticImage
               alt="GW2Calc logo, dragon on a for way splitted square"
-              src="../images/logo.png"
+              src="../../images/logo.png"
               width={33}
               height={33}
               objectFit="contain"
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <a href="https://github.com/C0WAL/GW2Calc" target="_blank" rel="noopener noreferrer">
             <StaticImage
               alt="Github invertocat logo"
-              src="../images/github-mark-white.png"
+              src="../../images/github-mark-white.png"
               width={30}
               height={30}
               objectFit="contain"

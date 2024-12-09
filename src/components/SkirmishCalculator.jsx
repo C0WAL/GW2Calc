@@ -8,7 +8,7 @@ import {
 } from "../data/SkirmishBuffs";
 import prettyMilliseconds from "pretty-ms";
 import GridSelector from "./common/GridSelector";
-import Selector from "./common/selector";
+import Selector from "./common/Selector";
 import { calculatePipsPerTick, calculateRemainingTime } from "../utilities/Calculations";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
