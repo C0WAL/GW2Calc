@@ -15,7 +15,7 @@ export const WarScoreBuff = [
         id: 'war-score-1',
         name: 'Third place',
         icon: 'war-score-1.png',
-        value: 3
+        value: 4
     }
 ]
 
