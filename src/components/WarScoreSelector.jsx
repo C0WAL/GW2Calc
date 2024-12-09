@@ -1,5 +1,5 @@
 import React from 'react';
-import { WarScoreBuff } from '../consts/skirmish-buffs';
+import { WarScoreBuff } from '../data/SkirmishBuffs';
 
 const WarScoreSelector = ({ selectedOption, onSelect }) => {
     return (

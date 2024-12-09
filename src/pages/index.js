@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/layout/Layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import Social from '../components/social'
+import Social from '../components/common/Social'
 
 const IndexPage = () => {
   return (

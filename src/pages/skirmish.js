@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Layout from '../components/layout'
-import SkirmishCalculator from '../components/skirmish-calculator'
+import Layout from '../components/layout/Layout'
+import SkirmishCalculator from '../components/SkirmishCalculator'
 
 const SkrimishPage = () => {
     return (

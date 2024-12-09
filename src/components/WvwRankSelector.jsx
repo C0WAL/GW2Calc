@@ -1,5 +1,5 @@
 import React from 'react';
-import { WvwRankBuff } from '../consts/skirmish-buffs';
+import { WvwRankBuff } from '../data/SkirmishBuffs';
 
 const WvwRankSelector = ({ selectedOption, onSelect }) => {
 

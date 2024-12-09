@@ -1,26 +1,16 @@
-import React, { useState } from "react";
-import { SkirmishRewardTrack } from "../consts/skirmish-buffs";
+import React, { useEffect, useMemo, useState } from "react";
+import { SkirmishRewardTrack } from "../data/SkirmishBuffs";
+import { calculateRemainingPoints } from "../utilities/Calculations";
 
 const RewardTracker = ({ onSelect }) => {
     const [selectedChest, setSelectedChest] = useState(0);
     const [selectedTier, setSelectedTier] = useState(1);
 
-    const remainingPoints = SkirmishRewardTrack.reduce((total, chest, index) => {
-        if (index < selectedChest) {
-            onSelect(total);
-            return total;
-        } else if (index === selectedChest) {
-            onSelect(total +
-                (chest.tiers - selectedTier + 1) * chest.pipsPerTier);
-            return (
-                total +
-                (chest.tiers - selectedTier + 1) * chest.pipsPerTier
-            );
-        } else {
-            onSelect(total + chest.tiers * chest.pipsPerTier);
-            return total + chest.tiers * chest.pipsPerTier;
-        }
-    }, 0);
+    const remainingPoints = useMemo(() => calculateRemainingPoints(selectedChest, selectedTier), [selectedChest, selectedTier])
+
+    useEffect(() => {
+        onSelect(remainingPoints);
+    }, [remainingPoints, onSelect])
 
     return (
         <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
