@@ -35,7 +35,7 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
                         <label
                             key={option.id}
                             className={`flex items-center cursor-pointer p-2 rounded-lg transition-colors duration-200 ${(multiple && selectedOptions.includes(option.id)) || (!multiple && selectedOptions === option.id)
-                                ? 'bg-blue-100'
+                                ? 'bg-[#E4C59E]'
                                 : 'hover:bg-gray-100'
                                 }`}
                         >
@@ -51,7 +51,7 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
                                 <GatsbyImage
                                     image={option.image}
                                     alt={option.name}
-                                    className="w-12 h-12 border border-gray-300"
+                                    style={{ width: '49px', height: '60px', objectFit: 'contain' }}
                                 />
                                 <span className="text-lg font-medium text-gray-700">{option.name}</span>
                             </div>

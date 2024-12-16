@@ -91,11 +91,11 @@ export const AdditionalOptions = [
 ];
 
 export const SkirmishRewardTrack = [
-    { chest: "Wood Chest", pipsPerTier: 25, tiers: 4 },
-    { chest: "Bronze Chest", pipsPerTier: 30, tiers: 4 },
-    { chest: "Silver Chest", pipsPerTier: 35, tiers: 5 },
-    { chest: "Gold Chest", pipsPerTier: 40, tiers: 5 },
-    { chest: "Platinum Chest", pipsPerTier: 45, tiers: 5 },
-    { chest: "Mithril Chest", pipsPerTier: 50, tiers: 6 },
-    { chest: "Diamond Chest", pipsPerTier: 55, tiers: 6 }
+    { chest: "Wood Chest", imageClosed: "wood-chest-closed.png", pipsPerTier: 25, tiers: 4 },
+    { chest: "Bronze Chest", imageClosed: "bronze-chest-closed.png", pipsPerTier: 30, tiers: 4 },
+    { chest: "Silver Chest", imageClosed: "silver-chest-closed.png", pipsPerTier: 35, tiers: 5 },
+    { chest: "Gold Chest", imageClosed: "gold-chest-closed.png", pipsPerTier: 40, tiers: 5 },
+    { chest: "Platinum Chest", imageClosed: "platinum-chest-closed.png", pipsPerTier: 45, tiers: 5 },
+    { chest: "Mithril Chest", imageClosed: "mithril-chest-closed.png", pipsPerTier: 50, tiers: 6 },
+    { chest: "Diamond Chest", imageClosed: "diamond-chest-closed.png", pipsPerTier: 55, tiers: 6 }
 ];

@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import { SkirmishRewardTrack } from "../data/SkirmishBuffs";
 import { calculateRemainingPoints } from "../utilities/Calculations";
 
-const RewardTracker = ({ onSelect }) => {
+const RewardTracker = ({ onSelect, tier, chest }) => {
     const [selectedChest, setSelectedChest] = useState(0);
     const [selectedTier, setSelectedTier] = useState(1);
-
-    const remainingPoints = useMemo(() => calculateRemainingPoints(selectedChest, selectedTier), [selectedChest, selectedTier])
+    const chestId = SkirmishRewardTrack.findIndex(track => track.chest === chest);
+    const remainingPoints = useMemo(() => calculateRemainingPoints(chestId, tier), [chestId, tier])
 
     useEffect(() => {
         onSelect(remainingPoints);

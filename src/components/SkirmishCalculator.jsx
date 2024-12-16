@@ -4,14 +4,17 @@ import RewardTracker from "./RewardTracker";
 import {
     WvwRankBuff,
     WarScoreBuff,
-    AdditionalOptions
+    AdditionalOptions,
+    SkirmishRewardTrack
 } from "../data/SkirmishBuffs";
 import prettyMilliseconds from "pretty-ms";
 import GridSelector from "./common/GridSelector";
 import Selector from "./common/Selector";
 import { calculatePipsPerTick, calculateRemainingTime } from "../utilities/Calculations";
-import { graphql, useStaticQuery } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import Carousel from "./common/Carousel";
+import { useImages } from "../utilities/OptionImageUtils";
+import { useSkirmishRewardTrackImages } from "../utilities/SkirmishRewardTrackImageUtils";
+import ButtonSelector from "./common/ButtonSelector";
 
 const SkirmishCalculator = () => {
     const [remainingPoints, setRemainingPoints] = useState(1450);
@@ -20,25 +23,11 @@ const SkirmishCalculator = () => {
         additionalOptions: ['commitment'],
         wvwRank: 'initiate',
     });
-    const { allFile } = useStaticQuery(graphql`
-        query {
-            allFile(filter: { extension: { eq: "png" } }) {
-                nodes {
-                    relativePath
-                    childImageSharp {
-                        gatsbyImageData(width: 100, height: 100, placeholder: BLURRED)
-                    }
-                }
-            }
-        }
-    `);
+    const [chosenChest, setChosenChest] = useState(SkirmishRewardTrack[0].chest);
+    const [chosenTier, setChosenTier] = useState(1);
 
-    const getImageForOption = (icon) => {
-        const imageNode = allFile.nodes.find((node) =>
-            node.relativePath === icon
-        );
-        return imageNode ? getImage(imageNode.childImageSharp) : null;
-    };
+    const getImageForOption = useImages();
+    const getSkirmishRewardTrackImage = useSkirmishRewardTrackImages();
 
     const enrichedWarScoreBuff = WarScoreBuff.map((buff) => ({
         ...buff,
@@ -53,6 +42,11 @@ const SkirmishCalculator = () => {
     const enrichedWvwRankBuff = WvwRankBuff.map((buff) => ({
         ...buff,
         image: getImageForOption(buff.icon),
+    }));
+
+    const enrichedSkirmishRewardTrack = SkirmishRewardTrack.map((buff) => ({
+        ...buff,
+        image: getSkirmishRewardTrackImage(buff.imageClosed)
     }));
 
     const pipsPerTick = useMemo(() => {
@@ -75,6 +69,14 @@ const SkirmishCalculator = () => {
     const handleRemainingPoints = useCallback((points) => {
         setRemainingPoints(points);
     }, []);
+
+    const handleChosenChest = useCallback((chest) => {
+        setChosenChest(chest);
+    }, []);
+
+    const handleChosenTier = useCallback((tier) => {
+        setChosenTier(tier);
+     }, []);
 
     const remainingTimeMs = useMemo(() => {
         return calculateRemainingTime(pipsPerTick, remainingPoints);
@@ -105,12 +107,18 @@ const SkirmishCalculator = () => {
                     onSelectionChange={(value) => handleSelectionChange('wvwRank', value)}
                 />
             </div>
+            <div className="justify-center">
+                <Carousel tracks={enrichedSkirmishRewardTrack} onSelect={handleChosenChest} />
+                <ButtonSelector chest={chosenChest} onSelect={handleChosenTier}/>
+            </div>
             <div className="p-4 flex justify-center space-x-4">
-                <RewardTracker onSelect={handleRemainingPoints} />
+                <RewardTracker onSelect={handleRemainingPoints} tier={chosenTier} chest={chosenChest}/>
                 <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
                     <p>Pips per tick: {pipsPerTick}</p> <br></br>
                     <p>Remaining time ms: {remainingTimeMs}</p> <br></br>
                     <p>Remaining time formatted: {prettyMilliseconds(remainingTimeMs)}</p>
+                    <p>Chest chosen: {chosenChest}</p>
+                    <p>Tier chosen: {chosenTier}</p>
                 </div>
             </div>
         </div>

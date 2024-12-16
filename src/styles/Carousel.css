@@ -1,0 +1,51 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+}
+
+.carousel-images {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    text-align: center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.carousel-item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.track-label {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
