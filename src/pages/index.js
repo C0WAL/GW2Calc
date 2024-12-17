@@ -21,7 +21,7 @@ const IndexPage = () => {
                 />
               </div>
               <p className="sm:mt-8 mt-3 sm:px-44 text-[#10172A] text-4xl sm:text-6xl font-semibold tracking-tighter">
-                Guild Wars 2 <span className="underline leading-8 underline-offset-8	decoration-8 decoration-[#ba1616]">Calculator</span>.
+                Guild Wars 2 <span className="underline leading-8 underline-offset-8	decoration-8 decoration-brick">Calculator</span>.
               </p>
               <p className="mt-4 sm:px-32 text-[#10172A] sm:text-xl text-sm font-semibold tracking-tighter">
                 by @C0WAL

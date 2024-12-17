@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Layout = ({ children }) => {
   return (
     <div className="flex flex-col h-screen w-screen">
-      <nav className="bg-[#322C2B] px-6 py-3 flex justify-between">
+      <nav className="bg-dbrown px-6 py-3 flex justify-between">
         <div className="flex items-center space-x-4">
           <a href="/" className="flex items-center space-x-4">
             <StaticImage
@@ -29,10 +29,10 @@ const Layout = ({ children }) => {
         </div>
       </nav>
       <div className="flex jk-h-full mt-4">
-        <aside className="w-1/7 jk-nav-h ml-4 rounded-md bg-[#E4C59E] flex flex-col justify-between shadow-md">
+        <aside className="w-1/7 jk-nav-h ml-4 rounded-md bg-sand flex flex-col justify-between shadow-md">
           <div className="p-6">
             <nav className="space-y-2 ">
-              <a href="/skirmish" className="flex items-center p-1 text-slate-100 bg-[#322C2B] hover:bg-[#AF8260] rounded">
+              <a href="/skirmish" className="flex items-center p-1 text-slate-100 bg-dbrown hover:bg-clay rounded">
                 <span className="mr-3">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
                 </span>
                 <span className="mr-5">WvW Skirmish chest</span>
               </a>
-              <a href="/rewardtrack" className="flex items-center p-1 text-slate-100 bg-[#322C2B] hover:bg-[#AF8260] rounded">
+              <a href="/rewardtrack" className="flex items-center p-1 text-slate-100 bg-dbrown hover:bg-clay rounded">
                 <span className="mr-3">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

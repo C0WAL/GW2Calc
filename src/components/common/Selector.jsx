@@ -37,7 +37,7 @@ const Selector = React.memo(({ data, label, defaultOptionId, onSelectionChange, 
                         <label
                             key={option.id}
                             className={`flex items-center cursor-pointer p-2 rounded-lg transition-colors duration-200 ${(multiple && selectedOptions.includes(option.id)) || (!multiple && selectedOptions === option.id)
-                                ? 'bg-[#E4C59E]'
+                                ? 'bg-sand'
                                 : 'hover:bg-gray-100'
                                 }`}
                         >
