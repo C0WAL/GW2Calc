@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import '../../styles/Carousel.css';
 
@@ -12,20 +12,16 @@ const Carousel = ({ tracks, onSelect }) => {
     };
 
     const goToPrevious = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = getWrappedIndex(prevIndex - 1);
-            onSelect(tracks[newIndex].chest);
-            return newIndex;
-        });
+        setCurrentIndex((prevIndex) => getWrappedIndex(prevIndex - 1));
     };
 
     const goToNext = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = getWrappedIndex(prevIndex + 1);
-            onSelect(tracks[newIndex].chest);
-            return newIndex;
-        });
+        setCurrentIndex((prevIndex) => getWrappedIndex(prevIndex + 1));
     };
+
+    useEffect(() => {
+        onSelect(tracks[currentIndex].chest);
+    }, [currentIndex, onSelect, tracks]);
 
     return (
         <div className="carousel-container">
