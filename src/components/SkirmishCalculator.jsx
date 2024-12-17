@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
 import React from "react";
-import RewardTracker from "./RewardTracker";
 import {
     WvwRankBuff,
     WarScoreBuff,
@@ -15,9 +14,9 @@ import Carousel from "./common/Carousel";
 import { useImages } from "../utilities/OptionImageUtils";
 import { useSkirmishRewardTrackImages } from "../utilities/SkirmishRewardTrackImageUtils";
 import ButtonSelector from "./common/ButtonSelector";
+import { calculateRemainingPoints } from "../utilities/Calculations";
 
 const SkirmishCalculator = () => {
-    const [remainingPoints, setRemainingPoints] = useState(1450);
     const [selectedOptions, setSelectedOptions] = useState({
         warScore: 'war-score-2',
         additionalOptions: ['commitment'],
@@ -28,6 +27,8 @@ const SkirmishCalculator = () => {
 
     const getImageForOption = useImages();
     const getSkirmishRewardTrackImage = useSkirmishRewardTrackImages();
+    const chosenChestId = SkirmishRewardTrack.findIndex(track => track.chest === chosenChest);
+    const remainingPoints = calculateRemainingPoints(chosenChestId, chosenTier);
 
     const enrichedWarScoreBuff = WarScoreBuff.map((buff) => ({
         ...buff,
@@ -66,17 +67,13 @@ const SkirmishCalculator = () => {
         });
     }, []);
 
-    const handleRemainingPoints = useCallback((points) => {
-        setRemainingPoints(points);
-    }, []);
-
     const handleChosenChest = useCallback((chest) => {
         setChosenChest(chest);
     }, []);
 
     const handleChosenTier = useCallback((tier) => {
         setChosenTier(tier);
-     }, []);
+    }, []);
 
     const remainingTimeMs = useMemo(() => {
         return calculateRemainingTime(pipsPerTick, remainingPoints);
@@ -109,16 +106,17 @@ const SkirmishCalculator = () => {
             </div>
             <div className="justify-center">
                 <Carousel tracks={enrichedSkirmishRewardTrack} onSelect={handleChosenChest} />
-                <ButtonSelector chest={chosenChest} onSelect={handleChosenTier}/>
+                <ButtonSelector chest={chosenChest} onSelect={handleChosenTier} />
             </div>
             <div className="p-4 flex justify-center space-x-4">
-                <RewardTracker onSelect={handleRemainingPoints} tier={chosenTier} chest={chosenChest}/>
-                <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
-                    <p>Pips per tick: {pipsPerTick}</p> <br></br>
-                    <p>Remaining time ms: {remainingTimeMs}</p> <br></br>
-                    <p>Remaining time formatted: {prettyMilliseconds(remainingTimeMs)}</p>
-                    <p>Chest chosen: {chosenChest}</p>
-                    <p>Tier chosen: {chosenTier}</p>
+                <div className="p-4 bg-white items-center flex-col flex border-[#803D3B] border rounded-lg shadow-md">
+                    <h3 className="font-bold text-3xl">You will finish weekly skirmish reward track in
+                        <div class="center ml-2 relative inline-block select-none whitespace-nowrap rounded-lg bg-[#803D3B] py-2 px-3.5 align-baseline font-sans text-3xl font-bold uppercase leading-none text-black">
+                            <div class="mt-px">{prettyMilliseconds(remainingTimeMs, { verbose: true })}</div>
+                        </div>
+                    </h3>
+                    <span>You're currently gaining {pipsPerTick} pips per tick (5 minutes).</span>
+                    <span>You need {remainingPoints} more pips to finish.</span>
                 </div>
             </div>
         </div>
