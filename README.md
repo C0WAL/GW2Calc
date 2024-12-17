@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://gw2calc.netlify.app/">
+  <a href="https://gw2calc.netlify.app/" target="_blank" rel="noopener noreferrer">
     <img alt="GW2Calc" src="src/images/logo.png" width="60" />
   </a>
 </p>
@@ -27,4 +27,4 @@ Quick overview of functionalities is listed below
 If you find any issue or have suggestions feel free to contact me via:
     - Discord: C0WAL
     - In-game: zidicck.6235
-Or just create an issue on github.
+or just create an issue on github.
