@@ -1,49 +1,30 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://gw2calc.netlify.app/">
+    <img alt="GW2Calc" src="src/images/logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal Starter
+  GW2 Calculator
 </h1>
 
-## 🚀 Quick start
+## 🗒️ Summary
 
-1.  **Create a Gatsby site.**
+GW2 Calculator is a website I wrote as a project to learn some react. The goal is to provide a simple interface for some common calculations made by Guild Wars 2 players.
+Quick overview of functionalities is listed below
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+1.  **Skirmish reward track**
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+    Basic configuration to calculate required time to finish the weekly skirmish reward track.
+    All information about additional pip modifiers was taken directly from the game wiki.
 
-2.  **Start developing.**
+2.  **WvW Reward track (WIP)**
 
-    Navigate into your new site’s directory and start it up.
+    Allows for precise calculation of reward track points per tick including instant reward track progress from Skirmish chests.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
 
-3.  **Open the code and start customizing!**
+## 	ℹ️ Contact
 
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+If you find any issue or have suggestions feel free to contact me via:
+    - Discord: C0WAL
+    - In-game: zidicck.6235
+Or just create an issue on github.
