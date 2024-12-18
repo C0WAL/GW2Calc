@@ -38,8 +38,17 @@ const Layout = ({ children }) => {
             </nav>
           </div>
         </aside>
-        <div className="w-5/6 h-full">
-          {children}
+        <div className="flex flex-col w-full jk-nav-h justify-center items-center">
+          <div className="w-5/6 h-full">
+            {children}
+          </div>
+          <hr className="my-6 border-brick w-5/6" />
+          <div className="flex justify-center items-center">
+            <span className="text-dbrown font-semibold text-sm py-1">
+              This unofficial site includes art and other assets that are © 2015 ArenaNet, Inc. All rights reserved.
+              All other trademarks are the property of their respective owners.
+            </span>
+          </div>
         </div>
       </div>
     </div>
