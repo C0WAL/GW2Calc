@@ -3,8 +3,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `GW2Calc`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `GW2 Calculator`,
+    description: `A simple calculator for all things Guild Wars 2.`,
+    siteUrl: `https://gw2calc.netlify.app/`
   },
   plugins: [
     "gatsby-plugin-postcss",
