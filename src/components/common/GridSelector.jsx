@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multiple = false }) => {
     const [selectedOptions, setSelectedOptions] = useState(multiple ? (defaultOptionId || []) : (defaultOptionId || null));
+    console.log(selectedOptions);
 
     useEffect(() => {
         if (multiple && Array.isArray(selectedOptions)) {
@@ -40,7 +41,7 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
                                 }`}
                         >
                             <input
-                                type="radio"
+                                type={multiple ? 'checkbox' : 'radio'}
                                 name="war-score"
                                 value={option.id}
                                 checked={multiple ? selectedOptions.includes(option.id) : selectedOptions === option.id}
@@ -51,7 +52,6 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
                                 <GatsbyImage
                                     image={option.image}
                                     alt={option.name}
-                                    style={{ width: '49px', height: '60px', objectFit: 'contain' }}
                                 />
                                 <span className="text-lg font-medium text-gray-700">{option.name}</span>
                             </div>
