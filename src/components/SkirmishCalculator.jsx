@@ -111,7 +111,7 @@ const SkirmishCalculator = () => {
             <div className="p-4 flex justify-center space-x-4">
                 <div className="p-4 bg-white items-center flex-col flex border-clay border-2 rounded-lg shadow-md">
                     <h3 className="font-bold text-3xl">You will finish weekly skirmish reward track in
-                        <div className="center ml-2 relative inline-block select-none whitespace-nowrap rounded-lg border-2 border-brick bg-clay py-2 px-3.5 align-baseline font-sans text-3xl font-bold uppercase leading-none text-black" style={{ minWidth: "700px" }}>
+                        <div className="center ml-2 relative inline-block select-none whitespace-nowrap rounded-lg bg-clay py-2 px-3.5 align-baseline font-sans text-3xl font-bold uppercase leading-none text-black" style={{ minWidth: "700px" }}>
                             <div className="mt-px flex justify-center">{prettyMilliseconds(remainingTimeMs, { verbose: true })}</div>
                         </div>
                     </h3>
