@@ -1,25 +1,30 @@
 export const BasicRewardTrackBonuses = [
     {
+        id:'xp-bonus',
         name: 'Experience Booster',
         icon: 'xp-bonus.png',
         value: 50
     },
     {
+        id:'bl-bonus',
         name: 'Black Lion Booster',
         icon: 'bl-bonus.png',
         value: 25
     },
     {
+        id:'festival-gobbler-bonus',
         name: 'Festival Gobbler Boost',
         icon: 'festival-gobbler-bonus.png',
         value: 25
     },
     {
+        id:'celebration-bonus',
         name: 'Celebration Bonus',
         icon: 'celebration-bonus.png',
         value: 10
     },
     {
+        id:'wvw-rewardtrack-enrichment',
         name: 'WvW Reward Track Enrichment',
         icon: 'wvw-rewardtrack-enrichment.png',
         value: 5
