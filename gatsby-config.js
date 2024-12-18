@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `GW2 Calculator`,
     description: `A simple calculator for all things Guild Wars 2.`,
+    image: `src/images/logo.png`,
     siteUrl: `https://gw2calc.netlify.app/`
   },
   plugins: [

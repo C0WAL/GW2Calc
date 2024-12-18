@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/layout/Layout'
 import SkirmishCalculator from '../components/SkirmishCalculator'
+import { SEO } from '../components/common/SEO'
 
 const SkrimishPage = () => {
     return (
@@ -10,6 +11,8 @@ const SkrimishPage = () => {
     )
 }
 
-export const Head = () => <title>Skirmish reward track calculator</title>
+export const Head = () => (
+    <SEO title="Skirmish rewardtrack calculator"/>
+)
 
 export default SkrimishPage
