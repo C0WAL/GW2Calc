@@ -9,4 +9,6 @@ const RewardTrackPage = () => {
     )
 }
 
+export const Head = () => <title>WvW reward track calculator</title>
+
 export default RewardTrackPage

@@ -10,10 +10,6 @@ const SkrimishPage = () => {
     )
 }
 
-export const Head = () => {
-    <>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>GW2Calc</title>
-    </>
-}
+export const Head = () => <title>Skirmish reward track calculator</title>
+
 export default SkrimishPage
