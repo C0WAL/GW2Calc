@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
             </nav>
           </div>
         </aside>
-        <div className="flex flex-col w-full jk-nav-h justify-center items-center">
+        <div className="flex flex-col flex-grow jk-nav-h justify-center items-center">
           <div className="w-5/6 h-full">
             {children}
           </div>
