@@ -40,7 +40,7 @@ const Carousel = ({ tracks, onSelect }) => {
                         return (
                             <div
                                 key={`${track.chest}-${offset}`}
-                                className={`carousel-item ${isCenter ? 'center' : 'side'}`}
+                                className={`carousel-item ${isCenter ? 'center' : 'side'} ${offset === 1 ? 'next' :''} ${offset === -1 ? 'prev' : ''}`}
                                 style={{
                                     opacity: isCenter ? 1 : 0.5,
                                     transform: isCenter ? 'scale(1)' : 'scale(0.8)',
