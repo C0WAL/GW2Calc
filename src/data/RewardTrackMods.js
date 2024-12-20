@@ -33,60 +33,60 @@ export const BasicRewardTrackBonuses = [
 
 export const RestedInComfyHome = [
     {
-        name: 'A Little Well Rested in a Comfy Home',
+        label: 'A Little Well Rested in a Comfy Home (2%)',
         value: 2
     },
     {
-        name: 'Well Rested in a Comfy Home',
+        label: 'Well Rested in a Comfy Home (4%)',
         value: 4
     },
     {
-        name: 'Very Well Rested in a Comfy Home',
+        label: 'Very Well Rested in a Comfy Home (6%)',
         value: 6
     },
     {
-        name: 'Highly Well Rested in a Comfy Home',
+        label: 'Highly Well Rested in a Comfy Home (8%)',
         value: 8
     },
 ]
 
 export const WvWGuildEnhancement = [
     {
-        tier: 1,
+        label: 'Tier 1 (3%)',
         value: 3
     },
     {
-        tier: 2,
+        label: 'Tier 2 (4%)',
         value: 4
     }
     ,
     {
-        tier: 3,
+        label: 'Tier 3 (5%)',
         value: 5
     }
     ,
     {
-        tier: 4,
+        label: 'Tier 4 (6%)',
         value: 6
     }
     ,
     {
-        tier: 5,
+        label: 'Tier 5 (7%)',
         value: 7
     }
     ,
     {
-        tier: 6,
+        label: 'Tier 6 (8%)',
         value: 8
     }
     ,
     {
-        tier: 7,
+        label: 'Tier 7 (9%)',
         value: 9
     }
     ,
     {
-        tier: 8,
+        label: 'Tier 8 (10%)',
         value: 10
     }
 ]
