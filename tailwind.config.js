@@ -12,7 +12,7 @@ module.exports = {
         clay: '#AF8260',
         brick: '#803D3B',
         light_primary: '#222831',
-        light_details: '#00acb5b9',
+        light_details: '#c5e1e2',
         light_background: '#EEEEEE',
         light_selected: '#393E46',
         light_text: '#4B5563'
