@@ -11,6 +11,11 @@ module.exports = {
         sand: '#E4C59E',
         clay: '#AF8260',
         brick: '#803D3B',
+        light_primary: '#222831',
+        light_details: '#00acb5b9',
+        light_background: '#EEEEEE',
+        light_selected: '#393E46',
+        light_text: '#4B5563'
       }
     },
   },

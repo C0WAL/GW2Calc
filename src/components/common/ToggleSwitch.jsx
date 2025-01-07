@@ -11,7 +11,7 @@ const ToggleSwitch = ({ isChecked, onChange, label, icon }) => {
                         className="w-12 h-12 border border-gray-300"
                     />
                 )}
-                <span className="text-lg font-medium text-gray-700">{label}</span>
+                <span className="text-lg font-medium text-light_text">{label}</span>
             </div>
             <input
                 type="checkbox"

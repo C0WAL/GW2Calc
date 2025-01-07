@@ -30,14 +30,14 @@ const Selector = React.memo(({ data, label, defaultOptionId, onSelectionChange, 
 
     return (
         <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-800">{label}</h2>
+            <h2 className="text-xl font-semibold text-light_text">{label}</h2>
             <div className="space-y-4">
                 {data && Array.isArray(data) ? (
                     data.map((option) => (
                         <label
                             key={option.id}
                             className={`flex items-center cursor-pointer p-2 rounded-lg transition-colors duration-200 ${(multiple && selectedOptions.includes(option.id)) || (!multiple && selectedOptions === option.id)
-                                ? 'bg-sand'
+                                ? 'bg-light_details'
                                 : 'hover:bg-gray-100'
                                 }`}
                         >
@@ -55,7 +55,7 @@ const Selector = React.memo(({ data, label, defaultOptionId, onSelectionChange, 
                                     alt={option.name}
                                     style={{ width: '49px', height: '60px', objectFit: 'contain' }}
                                 />
-                                <span className="text-lg font-medium text-gray-700">{option.name}</span>
+                                <span className="text-lg font-medium text-light_text">{option.name}</span>
                             </div>
                         </label>
                     ))

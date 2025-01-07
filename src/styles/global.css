@@ -9,3 +9,7 @@
 .jk-nav-h {
     height: calc(100% - 2rem);
 }
+
+.jk-options-w {
+    width: calc(100% - 4rem);
+}

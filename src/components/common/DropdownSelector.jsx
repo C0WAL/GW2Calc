@@ -19,7 +19,7 @@ export const DropdownSelector = ({ title, icon, content, width, onChange }) => {
                     image={image}
                     alt={icon}
                 />
-                <h4 className="text-xl font-semibold text-gray-800">{title}</h4>
+                <h4 className="text-xl font-semibold text-light_text">{title}</h4>
             </div>
             <Select
                 options={content}
