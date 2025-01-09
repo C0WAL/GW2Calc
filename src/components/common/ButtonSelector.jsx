@@ -16,7 +16,7 @@ const ButtonSelector = ({ chest, onSelect }) => {
     useEffect(() => {
         setCurrentTier(1);
         onSelect(1);
-    }, [chest]);
+    }, [chest,onSelect]);
 
     return (
         <div className="button-container justify-center mt-4 mb-4">
@@ -26,6 +26,7 @@ const ButtonSelector = ({ chest, onSelect }) => {
                     className={`tier-button ${tier === currentTier ? 'active' : ''}`}
                     onClick={() => handleButtonClick(tier)}
                     disabled={tier === currentTier}
+                    aria-label={`Selected tier ${tier}`}
                 />
             ))}
         </div>
