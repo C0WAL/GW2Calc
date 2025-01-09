@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply font-sans;
+  }
+
 .jk-h-full {
     height: calc(100% - 5px);
 }

@@ -16,6 +16,9 @@ module.exports = {
         light_background: '#EEEEEE',
         light_selected: '#393E46',
         light_text: '#4B5563'
+      },
+      fontFamily: {
+        sans: ["Roboto", "ui-sans-serif", "system-ui", "sans-serif"],
       }
     },
   },
