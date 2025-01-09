@@ -5,7 +5,7 @@ import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Social from '../components/common/Social'
-import { SEO } from '../components/common/SEO'
+import { Seo } from '../components/common/SEO'
 
 const IndexPage = () => {
   return (
@@ -55,7 +55,7 @@ const IndexPage = () => {
 }
 
 export const Head = () => (
-  <SEO />
+  <Seo />
 )
 
 export default IndexPage

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout/Layout'
-import { SEO } from '../components/common/SEO'
+import { Seo } from '../components/common/SEO'
 import RewardTrackCalculator from '../components/RewardTrackCalculator'
 
 const RewardTrackPage = () => {
@@ -12,7 +12,7 @@ const RewardTrackPage = () => {
 }
 
 export const Head = () => (
-    <SEO title="WvW rewardtrack calculator"/>
+    <Seo title="WvW rewardtrack calculator"/>
 )
 
 export default RewardTrackPage
