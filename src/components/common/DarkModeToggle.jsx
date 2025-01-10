@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const DarkModeToggle = () => {
     const [darkMode, setDarkMode] = useState(() => {
         if (typeof window !== "undefined") {
-          return localStorage.getItem("darkMode") === "true";
+          return localStorage.getItem("darkMode") === "true" || window.matchMedia("(prefers-color-scheme: dark)").matches;
         }
         return false;
       });
