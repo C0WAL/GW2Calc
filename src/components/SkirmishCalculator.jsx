@@ -109,14 +109,14 @@ const SkirmishCalculator = () => {
                 <ButtonSelector chest={chosenChest} onSelect={handleChosenTier} />
             </div>
             <div className="p-4 flex justify-center space-x-4">
-                <div className="p-4 bg-light_background items-center flex-col flex border-light_selected border-2 rounded-lg shadow-md">
-                    <h3 className="font-bold text-3xl mb-2">You will finish weekly skirmish reward track in
-                        <div className="center ml-2 relative inline-block select-none whitespace-nowrap rounded-lg bg-light_details py-2 px-3.5 align-baseline font-sans text-3xl font-bold uppercase leading-none text-black" style={{ minWidth: "700px" }}>
+                <div className="p-4 bg-background_color items-center flex-col flex border-border_color border-2 rounded-lg shadow-md">
+                    <h3 className="font-bold text-text_color text-3xl mb-2">You will finish weekly skirmish reward track in
+                        <div className="center ml-2 relative inline-block select-none whitespace-nowrap rounded-lg bg-details_color py-2 px-3.5 align-baseline font-sans text-3xl font-bold uppercase leading-none text-text_color" style={{ minWidth: "700px" }}>
                             <div className="mt-px flex justify-center">{prettyMilliseconds(remainingTimeMs, { verbose: true })}</div>
                         </div>
                     </h3>
-                    <span>You're currently gaining {pipsPerTick} pips per tick (5 minutes).</span>
-                    <span>You need {remainingPoints} more pips to finish.</span>
+                    <span className="text-text_color text-xl">You're currently gaining {pipsPerTick} pips per tick (5 minutes).</span>
+                    <span className="text-text_color text-xl">You need {remainingPoints} more pips to finish.</span>
                 </div>
             </div>
         </div>

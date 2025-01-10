@@ -4,18 +4,21 @@ module.exports = {
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      boxShadow: {
+        'custom-outline': `0 0 0 3px theme('colors.text_color')`, 
+      },
       colors: {
-        dbrown: '#322C2B',
-        sand: '#E4C59E',
-        clay: '#AF8260',
-        brick: '#803D3B',
-        light_primary: '#222831',
-        light_details: '#c5e1e2',
-        light_background: '#EEEEEE',
-        light_selected: '#393E46',
-        light_text: '#4B5563'
+        primary_color: "var(--primary)",
+        details_color: "var(--details)",
+        background_color: "var(--background)",
+        selected_color: "var(--selected)",
+        text_color: "var(--text)",
+        nav_text_color: "var(--nav_text)",
+        border_color: "var(--border)",
+        hover_color: "var(--hover)",
       },
       fontFamily: {
         sans: ["Roboto", "ui-sans-serif", "system-ui", "sans-serif"],

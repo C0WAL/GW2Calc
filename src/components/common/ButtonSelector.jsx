@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/ButtonSelector.css'
 import { SkirmishRewardTrack } from '../../data/SkirmishBuffs';
 
 const ButtonSelector = ({ chest, onSelect }) => {
@@ -19,11 +18,11 @@ const ButtonSelector = ({ chest, onSelect }) => {
     }, [chest,onSelect]);
 
     return (
-        <div className="button-container justify-center mt-4 mb-4">
+        <div className="flex items-center justify-center mt-4 mb-4 gap-4">
             {buttons.map((tier) => (
                 <button
                     key={tier}
-                    className={`tier-button ${tier === currentTier ? 'active' : ''}`}
+                    className={`tier-button w-[50px] h-[50px] rounded-full border border-background_color transition ease-in-out cursor-pointer border-4 shadow-custom-outline ${tier === currentTier ? 'bg-details_color' : 'bg-background_color'}`}
                     onClick={() => handleButtonClick(tier)}
                     disabled={tier === currentTier}
                     aria-label={`Selected tier ${tier}`}

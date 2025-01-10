@@ -28,16 +28,16 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
     };
 
     return (
-        <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-light_text">{label}</h2>
+        <div className="space-y-6 p-4 bg-background_color border-border_color border rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold text-text_color">{label}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {data && Array.isArray(data) ? (
                     data.map((option) => (
                         <label
                             key={option.id}
                             className={`flex items-center cursor-pointer p-2 rounded-lg transition-colors duration-200 ${(multiple && selectedOptions.includes(option.id)) || (!multiple && selectedOptions === option.id)
-                                ? 'bg-light_details'
-                                : 'hover:bg-gray-100'
+                                ? 'bg-details_color'
+                                : 'hover:bg-hover_color'
                                 }`}
                         >
                             <input
@@ -53,7 +53,7 @@ const GridSelector = ({ data, label, defaultOptionId, onSelectionChange, multipl
                                     image={option.image}
                                     alt={option.name}
                                 />
-                                <span className="text-lg font-medium text-light_text">{option.name}</span>
+                                <span className="text-lg font-medium text-text_color">{option.name}</span>
                             </div>
                         </label>
                     ))) : (<p>No data available</p>)}

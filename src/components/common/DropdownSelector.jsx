@@ -13,13 +13,13 @@ export const DropdownSelector = ({ title, icon, content, width, onChange }) => {
     };
 
     return (
-        <div className="space-y-6 p-4 bg-white border-gray-300 border rounded-lg shadow-md">
+        <div className="space-y-6 p-4 bg-background_color border-border_color border rounded-lg shadow-md">
             <div className="flex mb-2 space-x-2">
                 <GatsbyImage
                     image={image}
                     alt={icon}
                 />
-                <h4 className="text-xl font-semibold text-light_text">{title}</h4>
+                <h4 className="text-xl font-semibold text-text_color">{title}</h4>
             </div>
             <Select
                 options={content}

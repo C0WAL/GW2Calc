@@ -8,10 +8,10 @@ const ToggleSwitch = ({ isChecked, onChange, label, icon }) => {
                     <img
                         src={icon}
                         alt="icon"
-                        className="w-12 h-12 border border-gray-300"
+                        className="w-12 h-12 border border-border_color"
                     />
                 )}
-                <span className="text-lg font-medium text-light_text">{label}</span>
+                <span className="text-lg font-medium text-text_color">{label}</span>
             </div>
             <input
                 type="checkbox"

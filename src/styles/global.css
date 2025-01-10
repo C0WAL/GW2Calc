@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary: #222831;
+    --details: #c5e1e2;
+    --background: #EEEEEE;
+    --selected: #393E46;
+    --text: #4B5563;
+    --nav_text: #EEEEEE;
+    --border: #d1d5db;
+    --hover: #d1d5db;
+}
+
+.dark {
+    --primary: #222831;
+    --details: #628586;
+    --background: #393E46;
+    --selected: #78818f;
+    --text: #ffffff;
+    --nav_text: #EEEEEE;
+    --border: #646568;
+    --hover: #78818f;
+}
+
+
 body {
     @apply font-sans;
-  }
+}
 
 .jk-h-full {
     height: calc(100% - 5px);
