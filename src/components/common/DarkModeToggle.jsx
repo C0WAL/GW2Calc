@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from "react";
 
 export const DarkModeToggle = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const handleToggle = () => {
+    const [darkMode, setDarkMode] = useState(() => {
+        if (typeof window !== "undefined") {
+          return localStorage.getItem("darkMode") === "true";
+        }
+        return false;
+      });
+    
+      const handleToggle = () => {
         const newMode = !darkMode;
         setDarkMode(newMode);
         localStorage.setItem("darkMode", newMode);
-        document.documentElement.classList.toggle("dark", newMode);
-    };
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const storedDarkMode = localStorage.getItem("darkMode");
-            if (storedDarkMode !== null) {
-                const isDark = storedDarkMode === "true";
-                setDarkMode(isDark);
-                document.documentElement.classList.toggle("dark", isDark);
-            } else {
-                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                setDarkMode(prefersDark);
-                document.documentElement.classList.toggle("dark", prefersDark);
-            }
+    
+        if (newMode) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
         }
-    }, []);
+      };
+    
+      useEffect(() => {
+        if (darkMode) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }, [darkMode]);
 
     return (
         <button className="flex justify-center items-center h-8 w-8 rounded-full bg-background_color" onClick={() => handleToggle()}>
