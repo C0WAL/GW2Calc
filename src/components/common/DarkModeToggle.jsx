@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const DarkModeToggle = () => {
     const [darkMode, setDarkMode] = useState(() => {
@@ -18,6 +18,11 @@ export const DarkModeToggle = () => {
             document.documentElement.classList.remove("dark");
         }
     };
+
+    useEffect(() => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setDarkMode(isDark);
+    }, []);
 
     return (
         <button className="flex justify-center items-center h-8 w-8 rounded-full bg-background_color" onClick={() => handleToggle()}>
