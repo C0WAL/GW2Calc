@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode");
+    return localStorage.getItem("darkMode") === "true";
   });
 
   const handleToggle = () => {
