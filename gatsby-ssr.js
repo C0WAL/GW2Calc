@@ -1,8 +1,8 @@
 import React from "react";
 
-export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
+export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
     setHtmlAttributes({ lang: "en" });
-    setPreBodyComponents([
+    setHeadComponents([
         <script
             key="dark-mode-script"
             dangerouslySetInnerHTML={{
@@ -13,7 +13,7 @@ export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
                         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
                     
                         const darkMode = storedDarkMode === "true" || (storedDarkMode === null && prefersDark);
-                    
+                        localStorage.setItem("darkMode",darkMode);
                         if (darkMode) {
                             document.documentElement.classList.add("dark");
                         } else {
