@@ -81,7 +81,7 @@ const SkirmishCalculator = () => {
 
     return (
         <div>
-            <div className="p-4 flex justify-center space-x-4">
+            <div className="mb-4 flex justify-center space-x-4">
                 <Selector
                     data={enrichedWarScoreBuff}
                     label="War score"

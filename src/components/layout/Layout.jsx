@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
         </div>
       </nav>
       <div className="flex flex-col bg-background_color flex-grow jk-nav-h justify-center items-center">
-        <div className="w-5/6 h-full">
+        <div className="w-5/6 h-full p-4">
           {children}
         </div>
         <hr className="my-6 border-border_color w-5/6" />

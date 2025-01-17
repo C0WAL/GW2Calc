@@ -4,12 +4,11 @@ import Select from 'react-select'
 import { useDropdownImage } from "../../utilities/DropdownImageUtils"
 export const DropdownSelector = ({ title, icon, content, width, onChange }) => {
     const dropDownWidth = width || "min-w-96";
-    const [selectedOption, setSelectedOption] = useState(0);
     const getImageForOption = useDropdownImage();
     const image = getImageForOption(icon);
 
     const handleChange = (option) => {
-        setSelectedOption(option.value);
+        onChange(option.value);
     };
 
     return (
@@ -25,8 +24,35 @@ export const DropdownSelector = ({ title, icon, content, width, onChange }) => {
                 options={content}
                 onChange={handleChange}
                 className={`${dropDownWidth}`}
+                styles={{
+                    control: (base) => ({
+                        ...base,
+                        backgroundColor: 'var(--background)',
+                        color: 'var(--text)',
+                        borderColor: 'var(--border)',
+                    }),
+                    menu: (base) => ({
+                        ...base,
+                        backgroundColor: 'var(--background)',
+                        color: 'var(--text)',
+                    }),
+                    option: (base, state) => ({
+                        ...base,
+                        backgroundColor: state.isSelected
+                            ? 'var(--background)'
+                            : 'var(--background)',
+                        color: 'var(--text)',
+                        ':hover': {
+                            backgroundColor: 'var(--hover)', 
+                            color: 'var(--text)',
+                        },
+                    }),
+                    singleValue: (base) => ({
+                        ...base,
+                        color: 'var(--text)',
+                    })
+                }}
             />
-            <span>{selectedOption}</span>
         </div>
     )
 }
