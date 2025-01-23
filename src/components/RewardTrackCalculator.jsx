@@ -6,6 +6,7 @@ import { DropdownSelector } from "./common/DropdownSelector";
 import prettyMilliseconds from "pretty-ms";
 import { calculateTotalBonus } from "../utilities/RewardTrackCalculations";
 import ToggleSwitch from "./common/ToggleSwitch";
+import { ToggleDropdownSelector } from "./common/ToggleDropdownSelector";
 
 const RewardTrackCalculator = () => {
     const [pointsPerTick, setPointsPerTick] = useState(0);
@@ -13,6 +14,7 @@ const RewardTrackCalculator = () => {
         basicBonus: [],
         restedBonus: 0,
         guildBonus: 0,
+        basePoints: 0,
     });
 
     const handleSelectionChange = useCallback((key, value) => {
@@ -54,8 +56,8 @@ const RewardTrackCalculator = () => {
                     <DropdownSelector title="Guild bonus" icon="guild-bonus.png" content={WvWGuildEnhancement} onChange={(value) => handleSelectionChange('guildBonus', value)} />
                 </div>
             </div>
-            <div>
-                <ToggleSwitch label="test"></ToggleSwitch>
+            <div className="flex p-4 justify-center">
+                <ToggleDropdownSelector title="Mode" icon="castle-blue.png" content={RestedInComfyHome} content2={WvWGuildEnhancement} onChange={(value) => handleSelectionChange('basePoints', value)}/>
             </div>
             <div className="p-4 flex justify-center space-x-4">
                 <div className="p-4 bg-background_color items-center flex-col flex border-border_color border-2 rounded-lg shadow-md">
